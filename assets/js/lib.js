@@ -13,7 +13,7 @@ $(document).ready(function(){
 		"stateSave": false,
 		"scrollCollapse": true,
 		"ajax": {
-			url: 'http://167.86.127.69/exorde/api/selectList',
+			url: '/exorde/api/selectList',
 			type: "POST",
 			
 		},
@@ -79,7 +79,7 @@ function dbgM(){
 		"stateSave": false,
 		"scrollCollapse": true,
 		"ajax": {
-			url: 'http://167.86.127.69/exorde/api/select',
+			url: '/exorde/api/select',
 			type: "POST",
 			
 		},
@@ -108,7 +108,7 @@ function reloadTableProject(){
 		"stateSave": false,
 		"scrollCollapse": true,
 		"ajax": {
-			url: 'http://167.86.127.69/exorde/api/getProjectList',
+			url: '/exorde/api/getProjectList',
 			type: "POST",
 			
 		},
@@ -211,29 +211,29 @@ function aturCommand(exec){
 }
 
 function updateData(){
-    postData("frmIsian","http://167.86.127.69/exorde/api/update",dbgM())
+    postData("frmIsian","/exorde/api/update",dbgM())
 }
 
 function doLogin(){
-    postData("frmIsianLogin","http://167.86.127.69/exorde/doLogin",function(){
+    postData("frmIsianLogin","/exorde/doLogin",function(){
             $(':button').prop('disabled', false);
-            window.location.replace("http://167.86.127.69/exorde/akses");
+            window.location.replace("/exorde/akses");
         }, function(){
             $(':button').prop('disabled', false);
         })
 }
 
 function doRegister(){
-    postData("frmIsianRegister","http://167.86.127.69/exorde/doRegister",function(){
+    postData("frmIsianRegister","/exorde/doRegister",function(){
             $(':button').prop('disabled', false);
-            window.location.replace("http://167.86.127.69/exorde/login");
+            window.location.replace("/exorde/login");
         }, function(){
             $(':button').prop('disabled', false);
         })
 }
 
 function addAllVpsToWatchList(){
-    postData("frmIsianVps","http://167.86.127.69/exorde/api/addList",function(){
+    postData("frmIsianVps","/exorde/api/addList",function(){
             // $("#loader").css("display","none")
             $("#modalLoading").modal("hide")
             $(':button').prop('disabled', false);
@@ -247,7 +247,7 @@ function addAllVpsToWatchList(){
 function deleteAllIp(){
     $("#modalLoading").modal("show")
     $(':button').prop('disabled', true);
-    postData("frmIsianVps","http://167.86.127.69/exorde/api/delAllVpsProject",function(){
+    postData("frmIsianVps","/exorde/api/delAllVpsProject",function(){
             $("#modalLoading").modal("hide")
             $(':button').prop('disabled', false);
             cekTindakanProject('listIp')
@@ -270,7 +270,7 @@ function cekIpLama(data){
 }
 
 $('body').on('change', '#cmbMaster', function() {
-    postData("frmIsianVps","http://167.86.127.69/exorde/api/loadMasterOption",function(){
+    postData("frmIsianVps","/exorde/api/loadMasterOption",function(){
             $("#modalLoading").modal("hide")
             $(':button').prop('disabled', false);
         }, function(){
@@ -318,7 +318,7 @@ $('body').on('change', '#cmbMaster', function() {
 // }
 
 function aturButtonAll(){
-    postData("frmIsianVps","http://167.86.127.69/exorde/api/loadDetailOption",function(){
+    postData("frmIsianVps","/exorde/api/loadDetailOption",function(){
             $("#modalLoading").modal("hide")
             $(':button').prop('disabled', false);
         }, function(){
@@ -414,7 +414,7 @@ function ambilIpDb(){
                 dataV = dataV.concat({name: 'user',value: name})
                 $.ajax({
                     type: "POST",
-                    url: 'http://167.86.127.69/exorde/api/getIpDb',
+                    url: '/exorde/api/getIpDb',
                     data: dataV,
                     success: function(msg) {
                         if(msg.result_code == 0){
@@ -461,7 +461,7 @@ function deleteProject(id){
             dataV = dataV.concat({name: 'projectName',value: name})
             $.ajax({
                 type: "POST",
-                url: 'http://167.86.127.69/exorde/api/deleteProject',
+                url: '/exorde/api/deleteProject',
                 data: dataV,
                 success: function(msg) {
                     if(msg.result_code == 0){
@@ -536,7 +536,7 @@ function cekTindakanProject(data){
     $("#modalLoading").modal("show")
     $(':button').prop('disabled', true);
     if(data == "list"){
-        postData("frmIsianVps","http://167.86.127.69/exorde/api/getList",function(){
+        postData("frmIsianVps","/exorde/api/getList",function(){
             // $("#loader").css("display","none")
             $("#modalLoading").modal("hide")
             // $("#addList").prop('disabled', false);
@@ -569,7 +569,7 @@ function cekTindakanProject(data){
             $("#allIpVps").empty()
             $("#allIpVps").css("display","none")
             $("#cmbProjectIp").empty()
-            postData("frmIsianVps","http://167.86.127.69/exorde/api/getListIp",function(){
+            postData("frmIsianVps","/exorde/api/getListIp",function(){
                 // $("#loader").css("display","none")
                 $("#modalLoading").modal("hide")
                 $(':button').prop('disabled', false);
@@ -634,7 +634,7 @@ function cekTindakanProject(data){
         if($("#cmbProject").val() != 0 && $("#ramVps").val().includes("Pilih") == false && $("#zona").val().includes("Pilih") == false){
             let loop = $("#jml").val().length > 0? $("#jml").val():1
             for(let i = 0; i < loop; i++){
-                postData("frmIsianVps","http://167.86.127.69/exorde/api/newVps",function(){
+                postData("frmIsianVps","/exorde/api/newVps",function(){
                     // $("#loader").css("display","none")
                     $("#modalLoading").modal("hide")
                     $(':button').prop('disabled', false);
@@ -658,7 +658,7 @@ function cekTindakanProject(data){
             $(':button').prop('disabled', false);
         }
     }else if(data == "delVps"){
-        postData("frmIsianVps","http://167.86.127.69/exorde/api/delVps",function(){
+        postData("frmIsianVps","/exorde/api/delVps",function(){
             cekTindakanProject("list")
             // $("#loader").css("display","none")
             $("#modalLoading").modal("hide")
@@ -673,7 +673,7 @@ function cekTindakanProject(data){
             let data = $("#frmIsianVps #ipListMulti").val().split("#")
                 for(let i = 0; i < data.length; i++){
                     $("#frmIsianVps #ipListMulti").val(data[i])
-                    postData("frmIsianVps","http://167.86.127.69/exorde/api/startVps",function(){
+                    postData("frmIsianVps","/exorde/api/startVps",function(){
                         // $("#loader").css("display","none")
                         $("#modalLoading").modal("hide")
                         $(':button').prop('disabled', false);
@@ -684,7 +684,7 @@ function cekTindakanProject(data){
                     })
                 }
         }else{
-            postData("frmIsianVps","http://167.86.127.69/exorde/api/startVps",function(){
+            postData("frmIsianVps","/exorde/api/startVps",function(){
                 // $("#loader").css("display","none")
                 $("#modalLoading").modal("hide")
                 $(':button').prop('disabled', false);
@@ -699,7 +699,7 @@ function cekTindakanProject(data){
             let data = $("#frmIsianVps #ipListMulti").val().split("#")
                 for(let i = 0; i < data.length; i++){
                     $("#frmIsianVps #ipListMulti").val(data[i])
-                    postData("frmIsianVps","http://167.86.127.69/exorde/api/stopVps",function(){
+                    postData("frmIsianVps","/exorde/api/stopVps",function(){
                         // $("#loader").css("display","none")
                         $("#modalLoading").modal("hide")
                         $(':button').prop('disabled', false);
@@ -710,7 +710,7 @@ function cekTindakanProject(data){
                     })
                 }
         }else{
-            postData("frmIsianVps","http://167.86.127.69/exorde/api/stopVps",function(){
+            postData("frmIsianVps","/exorde/api/stopVps",function(){
                 // $("#loader").css("display","none")
                 $("#modalLoading").modal("hide")
                 $(':button').prop('disabled', false);
@@ -726,7 +726,7 @@ function cekTindakanProject(data){
             // $("#fakeScreen").html("<p class='line2'>"+$("#frmIsianVps #ipCommand").val()+"</p>")
             terminal($("#frmIsianVps #ipCommand").val())
             setTimeout(function(){
-                postData("frmIsianVps","http://167.86.127.69/exorde/api/runCommand",function(){
+                postData("frmIsianVps","/exorde/api/runCommand",function(){
                     // $("#loader").css("display","none")
                     $("#modalLoading").modal("hide")
                     $(':button').prop('disabled', false);
@@ -789,7 +789,7 @@ function insertDataVpsFunc(){
         formData.append('action2', $('#frmIsianVps #cmbMaster').val());
         $.ajax({
             type: "POST",
-            url: "http://167.86.127.69/exorde/api/actionvps",
+            url: "/exorde/api/actionvps",
             data: formData,
             processData: false,
             contentType: false,
