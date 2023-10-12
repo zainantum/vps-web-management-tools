@@ -4,7 +4,7 @@
   class="light-style customizer-hide"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="http://167.86.127.69/exorde/assets/"
+  data-assets-path="/exorde/assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="http://167.86.127.69/exorde/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/exorde/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,25 +30,25 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/css/demo.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/exorde/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
     <!-- Page -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/css/pages/page-auth.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/css/pages/page-auth.css" />
     <!-- Helpers -->
-    <script src="http://167.86.127.69/exorde/assets/vendor/js/helpers.js"></script>
+    <script src="/exorde/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="http://167.86.127.69/exorde/assets/js/config.js"></script>
+    <script src="/exorde/assets/js/config.js"></script>
   </head>
 
   <body>
@@ -162,7 +162,7 @@
 
               <p class="text-center">
                 <span>Belum punya akun kah maniezzz?</span>
-                <a href="http://167.86.127.69/exorde/register">
+                <a href="/exorde/register">
                   <span>Gass buat dulu</span>
                 </a>
               </p>
@@ -177,19 +177,19 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="http://167.86.127.69/exorde/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/libs/popper/popper.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/js/bootstrap.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/exorde/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/exorde/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/exorde/assets/vendor/js/bootstrap.js"></script>
+    <script src="/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/js/menu.js"></script>
+    <script src="/exorde/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="http://167.86.127.69/exorde/assets/js/main.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/js/lib.js"></script>
+    <script src="/exorde/assets/js/main.js"></script>
+    <script src="/exorde/assets/js/lib.js"></script>
 
     <!-- Page JS -->
 
