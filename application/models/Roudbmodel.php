@@ -1,7 +1,5 @@
 <?php
-/*
-* Last Update 2017-04-29, Andy
-*/
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Roudbmodel extends CI_Model {
@@ -14,34 +12,6 @@ class Roudbmodel extends CI_Model {
       $this->load->database();
       date_default_timezone_set("Asia/Jakarta");
     }	
-
-    /**
-     * exec stored procedures
-     * $sp_name : stored procedures name
-     * $params : stored procedures parameters (in/out) - params: array format
-     * 
-     * example:
-     *    $params = array(
-     *      "in"=> array(
-     *          "param_name" => "value"
-     *       ),
-     *      "out"=> array(
-     *          "output_name" => ""
-     *       )
-     *    );
-     * 
-     * [SQL SERVER] check Sqlsrvmodel.php for output type
-     */
-
-    
-    /**
-     * FOR MYSQL ONLY!
-     * ---------------------------------
-     * exec stored procedures with query
-     * $sqlSP : query to exec stored procedures
-     * $sqlResult : query to select output
-     */
-
     
     function ExecQueryJSon($SqlStr){
       if ($SqlStr !== ''){
@@ -180,16 +150,6 @@ class Roudbmodel extends CI_Model {
     }
     
     function insertData($tableName, $fieldValueData) {
-      /*
-        * $tableName -> nama table yg dituju, ie : tb_m_brg
-        * $fieldValueData -> list kombinasi nama field dan data yg akan di input
-        *   ie : "kode_brg=>M0001;nama_brg=>Meja;qty_order=>+1;tgl_jam_buat=>NOW();tgl_order=>2016-06-20 09:22"
-        *   note : Value akan selalu dalam Escaped ('')
-        *          Tambahkan '+' jika ingin value tidak ditambahkan escaped string ('')
-        *          fungsi NOW() => utk mendapatkan tgl jama saat ini.
-        *          format tgl adalah yyyy-mm-dd hh:nn
-        *          value NULL dan kosong, akan diabaikan
-        */
         $data = $this->convertToArr($fieldValueData, $tableName);
         return $this->insertDataArr($tableName, $data);
       }
@@ -211,16 +171,6 @@ class Roudbmodel extends CI_Model {
     }	 
     
     function updateData($tableName, $fieldValueData, $whereList) {
-    /*
-      * $tableName -> nama table yg dituju, ie : tb_m_brg
-      * $fieldValueData -> list kombinasi nama field dan data yg akan di input
-      *   ie : "kode_brg=>M0001;nama_brg=>Meja;qty_order=>+1;tgl_jam_buat=>NOW();tgl_order=>2016-06-20 09:22"
-      *   note : Value akan selalu dalam Escaped ('')
-      *          Tambahkan '+' jika ingin value tidak ditambahkan escaped string ('')
-      *          fungsi NOW() => utk mendapatkan tgl jama saat ini.
-      *          format tgl adalah yyyy-mm-dd hh:nn
-      *          value NULL dan kosong, akan diabaikan
-      */
       $data = $this->convertToArr($fieldValueData, $tableName);
       //cek apakah ada string penanda conversi ke array ("=>")
       if( strpos($whereList, "=>") !== false ) {			 			 	
@@ -255,16 +205,6 @@ class Roudbmodel extends CI_Model {
     }	
     
     function deleteData($tableName, $whereList) {
-    /*
-      * $tableName -> nama table yg dituju, ie : tb_m_brg
-      * $fieldValueData -> list kombinasi nama field dan data yg akan di input
-      *   ie : "kode_brg=>M0001;nama_brg=>Meja;qty_order=>+1;tgl_jam_buat=>NOW();tgl_order=>2016-06-20 09:22"
-      *   note : Value akan selalu dalam Escaped ('')
-      *          Tambahkan '+' jika ingin value tidak ditambahkan escaped string ('')
-      *          fungsi NOW() => utk mendapatkan tgl jama saat ini.
-      *          format tgl adalah yyyy-mm-dd hh:nn
-      *          value NULL dan kosong, akan diabaikan
-      */
       //cek apakah ada string penanda conversi ke array ("=>")
       if( strpos($whereList, "=>") !== false ) {			 			 	
        $where = $this->convertToArr($whereList);
