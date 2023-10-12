@@ -17,7 +17,7 @@ class Welcome extends CI_Controller {
 	function index()
 	{
 		if(maintenance && $this->getUsername() != "imron"){
-			redirect('http://167.86.127.69/exorde/maintenance', 'refresh');
+			redirect('/maintenance', 'refresh');
 		}else{
 			$this->load->view('table');
 		}
@@ -29,7 +29,7 @@ class Welcome extends CI_Controller {
 
 	function register(){
 		if(maintenance){
-			redirect('http://167.86.127.69/exorde/maintenance', 'refresh');
+			redirect('/maintenance', 'refresh');
 		}else{
 			$this->load->view('register');
 		}
@@ -227,7 +227,7 @@ class Welcome extends CI_Controller {
 	function akses()
 	{
 		if(maintenance && $this->getUsername() != "imron"){
-			redirect('http://167.86.127.69/exorde/maintenance', 'refresh');
+			redirect('/maintenance', 'refresh');
 		}else{
 			if($this->cekSession()){
 				$this->load->view('form');
@@ -240,7 +240,7 @@ class Welcome extends CI_Controller {
 	function profile()
 	{
 		if(maintenance && $this->getUsername() != "imron"){
-			redirect('http://167.86.127.69/exorde/maintenance', 'refresh');
+			redirect('/maintenance', 'refresh');
 		}else{
 			if($this->cekSession()){
 				$this->load->view('profile');
@@ -271,7 +271,7 @@ class Welcome extends CI_Controller {
 	}
 
 	function GenUserPassMD5($usrpassword){
-		$SecKey = "arbytergroup";
+		$SecKey = "randomCode";
   		return md5(md5($SecKey).md5($usrpassword.$SecKey));
 	}
 
@@ -1103,7 +1103,7 @@ class Welcome extends CI_Controller {
 					->set_content_type('application/json')
 					->set_output($data);
 		}else{
-			redirect('http://167.86.127.69/exorde/login', 'refresh');
+			redirect('/login', 'refresh');
 			$data = json_encode(
 				array(
 					'result_code' => 3, 
