@@ -38,39 +38,16 @@ class Gcloud{
             if (count($instances) > 0) {
                 $response = $instancesClient->list($projectId, str_replace("zones/","",$zone));
                 foreach ($response as $element) {
-                    // printf('Element data: %s' . PHP_EOL, $element->serializeToJsonString());
                     $dataLeng = json_decode($element->serializeToJsonString(), true);
-                    // if(array_key_exists("name", $dataLeng) && array_key_exists("natIp",$dataLeng["networkInterfaces"][0]["accessConfigs"][0])){
                         $nama = $dataLeng["name"];
                         if(array_key_exists("natIP",$dataLeng["networkInterfaces"][0]["accessConfigs"][0])){
                             $ip = $dataLeng["networkInterfaces"][0]["accessConfigs"][0]["natIP"];
                         }else{
                             $ip = 'VPS Stop';
                         }
-                        // foreach(json_decode($element->serializeToJsonString(), true) as $key => $value){
-                        //     if($key == "name"){
-                        //         $nama = $value;
-                        //     }
-                        //     if($key == "networkInterfaces"){            
-                        //         $ip = $value[0]["accessConfigs"][0]["natIP"];
-                        //     }
-                        //     // log_message("debug","coba cek $key ".json_encode($value[0]["accessConfigs"][0]["natIP"]));
-                        // }
                         $str .= "<option value='$projectId;$zone;".$nama."'>".$nama." ~ $ip ~ $zone</option>";
-                        // log_message("debug","cobak secek ".json_encode($dataIp));
-                    // }
                 }
             }
-            // $instances = $zoneInstances->getInstances();
-            // if (count($instances) > 0) {
-            //     // printf('Zone - %s' . PHP_EOL, $zone);
-            //     foreach ($instances as $instance) {
-            //         // log_message("debug","check all instance ".json_encode($instances->networkInterfaces));
-            //         // printf(' - %s' . PHP_EOL, $instance->getName());
-            //         $str .= "<option value='$projectId;$zone;".$instance->getName()."'>".$instance->getName()." di project $projectId dengan zona $zone</option>";
-            //         // log_message("debug","check detail $projectId dengan zona $zone dan nama vps ".$instance->getName());
-            //     }
-            // }
         }
 
         return $str;
@@ -114,7 +91,6 @@ class Gcloud{
                     $lama = $dataLeng["networkInterfaces"][0]["accessConfigs"][0]["natIP"];
                     //read the entire string
                     $str=file_get_contents(FCPATH.'listIp.txt');
-                    //replace something in the file string - this is a VERY simple example
                     if($lama != "" && strpos($str, $lama) !== false){
                         $str=str_replace($lama, "",$str);
                         //write the entire string
@@ -156,12 +132,6 @@ class Gcloud{
             ->setDiskSizeGb($diskSize)
             ->setInitializeParams($diskInitializeParams);
         
-        // $metaItems = (new Items())
-        //     ->setKey('imron')
-        //     ->setValue('ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlHPhMcuLRKR852rf/5jEb8z/nTd2URfxYJViWwxQlMoXUf5NdORsLK7hQPrlPqKtpluJTDLYZE70xUiCHWDpWDBeGKPi/TpJlE3pxWCDxZQ12GzZ2trvuEABa8fu4owCkMHiUcfazAamkFT3NXQVfqDe/nW9k2LA+dPvWU8O7qaJs6KJQtrk9NqLh1wl+ulEdOFRreGM+48cQ25DzZqjen2ofAyhVFq2+GOYHeKqZ5sRaiN/Dt4P2YOoF4RpLpoNmltgKRhs9xgkuIlOo0VM7YyvTY/0Yn/2ZrQE9PahSNwOh5a2+xn/Y8leSJvfe9C93qYFBvEk9kyE+usIwPtIHQ== imron');
-        // $metaData = (new Metadata())
-        //     ->setItems([$metaItems]);
-        
         $networkConfig = (new AccessConfig())
         ->setType("ONE_TO_ONE_NAT")
         ->setName("External NAT");
@@ -171,21 +141,6 @@ class Gcloud{
             ->setStackType("IPV4_ONLY")
             ->setAccessConfigs(array($networkConfig));
         
-        // // get address
-        // $ipName = "foo";
-        // $addr = (new Address())
-        // ->setName($ipName);
-        // $response = $service->addresses->insert($projectId, $zone, $addr);
-        // sleep(5);
-        // $response = $service->addresses->get($project, $ipZone, $ipName);
-        // $ip = $response->address;
-        // echo($ip);
-
-        // $networkConfig = (new AccessConfig())
-        // ->setNatIP($ip)
-        // ->setType("ONE_TO_ONE_NAT")
-        // ->setName("External NAT");
-        // Create the Instance object.
         $instance = (new Instance())
             ->setName($instanceName)
             ->setDisks([$disk])
