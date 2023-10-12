@@ -1,0 +1,31 @@
+#Deny from all
+Allow from All
+#RewriteEngine On
+
+#uncomment jika ingin diredirect ke https. Tidak bekerja di localhost
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HOST_NAME}%{REQUEST_URI} [R=301]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-D
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA] 
+</IfModule>
+
+#tes
+
+<Files "index.php">
+  AcceptPathInfo On
+</Files>
+
+<FilesMatch ".*\.(css|js)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
