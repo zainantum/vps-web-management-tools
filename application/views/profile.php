@@ -5,7 +5,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="http://167.86.127.69/exorde/assets/"
+  data-assets-path="/exorde/assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -20,7 +20,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="http://167.86.127.69/exorde/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/exorde/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,13 +31,13 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/css/demo.css" />
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/css/terminal.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/exorde/assets/css/demo.css" />
+    <link rel="stylesheet" href="/exorde/assets/css/terminal.css" />
     	<!-- Datatable CSS -->
 	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   	<link href='https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
@@ -48,16 +48,16 @@
 	  <!-- Datatable JS -->
   	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="http://167.86.127.69/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="http://167.86.127.69/exorde/assets/vendor/js/helpers.js"></script>
+    <script src="/exorde/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="http://167.86.127.69/exorde/assets/js/config.js"></script>
+    <script src="/exorde/assets/js/config.js"></script>
   </head>
 
   <body>
@@ -68,7 +68,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="http://167.86.127.69/exorde" class="app-brand-link">
+            <a href="/exorde" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                   width="25"
@@ -138,7 +138,7 @@
             <!-- Dashboard -->
 
             <!-- <li class="menu-item">
-              <a href="http://167.86.127.69/exorde/pantau" class="menu-link">
+              <a href="/exorde/pantau" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Pantau VPS</div>
               </a>
@@ -146,7 +146,7 @@
 
             <!-- Layouts -->
             <li class="menu-item">
-              <a href="http://167.86.127.69/exorde/akses" class="menu-link">
+              <a href="/exorde/akses" class="menu-link">
               <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Analytics">Akses VPS</div>
               </a>
@@ -155,7 +155,7 @@
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Tables</span></li>
             <li class="menu-item">
-              <a href="http://167.86.127.69/exorde" class="menu-link">
+              <a href="/exorde" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
                 <div data-i18n="Tables">Daftar IP Mati</div>
               </a>
@@ -182,7 +182,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="http://167.86.127.69/exorde/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="/exorde/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -191,7 +191,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="http://167.86.127.69/exorde/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="/exorde/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -214,7 +214,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="http://167.86.127.69/exorde/doLogout">
+                      <a class="dropdown-item" href="/exorde/doLogout">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle" style="color: #6c757d!important;">Log Out</span>
                       </a>
@@ -315,24 +315,24 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="http://167.86.127.69/exorde/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/exorde/assets/vendor/libs/jquery/jquery.js"></script>
     <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
     <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/libs/popper/popper.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/js/bootstrap.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/exorde/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/exorde/assets/vendor/js/bootstrap.js"></script>
+    <script src="/exorde/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="http://167.86.127.69/exorde/assets/vendor/js/menu.js"></script>
+    <script src="/exorde/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="http://167.86.127.69/exorde/assets/js/main.js"></script>
-    <script src="http://167.86.127.69/exorde/assets/js/lib.js"></script>
+    <script src="/exorde/assets/js/main.js"></script>
+    <script src="/exorde/assets/js/lib.js"></script>
 
     <!-- Page JS -->
 
